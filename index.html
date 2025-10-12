@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoeyar ID Card Arranger</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f4f4f9; color: #333; }
+        .container { max-width: 800px; margin: auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1, h2 { color: #5a4a9f; }
+        .download-button { display: inline-block; background-color: #28a745; color: #fff; padding: 15px 30px; text-decoration: none; font-size: 1.2em; font-weight: bold; border-radius: 5px; text-align: center; margin: 20px 0; }
+        .download-button:hover { background-color: #218838; }
+        img.screenshot { width: 100%; border-radius: 5px; margin-bottom: 15px; }
+        .features { list-style-type: '✅  '; padding-left: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Yoeyar ID Card Arranger</h1>
+        
+        <p>Still wasting time and energy printing ID cards? With Yoeyar ID Card Arranger, your work becomes as easy as snapping your fingers!</p>
+        
+        <a href="#" id="downloadLink" class="download-button">Download Latest Version</a>
+        
+        <h2>Screenshots</h2>
+        <img src="https://i.imgur.com/your-screenshot-1.png" alt="Software Screenshot 1" class="screenshot">
+        <img src="https://i.imgur.com/your-screenshot-2.png" alt="Software Screenshot 2" class="screenshot">
+
+        <h2>🌟 Key Features</h2>
+        <ul class="features">
+            <li><strong>Automatic Cropping:</strong> Simply add your photos, and the software automatically crops them to the correct card size.</li>
+            <li><strong>Precise Adjustments:</strong> Easily fix tilted or skewed images with Perspective Correction and Manual Crop tools.</li>
+            <li><strong>Image Enhancement:</strong> Improve your images with one-click tools like Auto Tone, Auto Contrast, Sharpen, and Denoise before printing.</li>
+            <li><strong>Easy Management:</strong> Rotate images, assign Front/Back labels, and re-order cards with a simple drag-and-drop interface.</li>
+            <li><strong>Flexible Printing:</strong> Generate a PDF or print directly. Customize your layout to fit multiple cards on a single A4 page.</li>
+        </ul>
+
+        <h2>Contact</h2>
+        <p>For questions and support, please contact us on Facebook: Yoeyar or Zin Thu Hopong.</p>
+    </div>
+
+    <script>
+        fetch("https://api.github.com/repos/YOUR_USERNAME/YOUR_REPOSITORY_NAME/releases/latest")
+            .then(response => response.json())
+            .then(data => {
+                const downloadUrl = data.assets[0].browser_download_url;
+                document.getElementById("downloadLink").href = downloadUrl;
+            })
+            .catch(error => console.error('Error fetching release:', error));
+    </script>
+</body>
+</html>
