@@ -24,29 +24,27 @@
             background-image: radial-gradient(circle at 10% 20%, rgba(138, 79, 255, 0.2), transparent 50%),
                               radial-gradient(circle at 80% 90%, rgba(79, 118, 255, 0.15), transparent 50%);
             color: var(--text-color);
-            position: relative; /* Needed for the watermark z-index */
+            position: relative; 
         }
 
-        /* --- NEW: WATERMARK STYLES --- */
+        /* --- WATERMARK STYLES --- */
         body::before {
             content: '';
-            position: fixed; /* Stays in place when scrolling */
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1; /* Puts it behind all content */
+            z-index: -1;
             
-            /* --- PASTE YOUR RAW LOGO URL HERE --- */
-            background-image: url('https://github.com/Thinzaw/yoeyar-card-website/blob/main/icon.png');
+            /* --- CORRECTED RAW LOGO URL --- */
+            background-image: url('https://raw.githubusercontent.com/Thinzaw/yoeyar-card-website/main/icon.png');
             
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: 500px; /* Adjust size as needed */
-            opacity: 0.03; /* Adjust transparency (0.01 to 0.1 is good) */
+            background-size: 1000px;
+            opacity: 0.09;
         }
-        /* --- END OF WATERMARK STYLES --- */
-
 
         .container {
             max-width: 900px;
@@ -212,7 +210,7 @@
 
     <nav class="language-switcher">
         <button class="lang-btn" onclick="switchLanguage('en')">English</button>
-<button class="lang-btn active" onclick="switchLanguage('my')">မြန်မာ</button>
+        <button class="lang-btn active" onclick="switchLanguage('my')">မြန်မာ</button>
     </nav>
 
     <div class="container">
@@ -285,11 +283,11 @@
                 'feature6_title': 'Modern & Fast',
                 'feature6_desc': 'A clean, modern interface that is fast and responsive, helping you get your work done in record time.',
                 'contact_title': 'Contact',
-                'contact_desc': 'For questions and support, please contact us on Facebook page: ရိုးရာဆိုင် or ဇင်သူ ဟိုပုံး.'
+                'contact_desc': 'For questions and support, please contact us on Facebook Page: ရိုးရာဆိုင် or ဇင်သူ ဟိုပုံး.'
             },
             'my': {
                 'title': 'Yoeyar ID Card Arranger',
-                'subtitle': 'ကတ်ပြားတွေ Print ထုတ်ဖို့ အချိန်ကုန်၊ လူပင်ပန်းနေတုန်းလား? Yoeyar ID Card Arranger နဲ့ဆို အလုပ်တွေ kinder bueno လို လွယ်သွားပြီ!',
+                'subtitle': 'ကတ်ပြားတွေ Print ထုတ်ဖို့ အချိန်ကုန်၊ လူပင်ပန်းနေတုန်းလား? Yoeyar ID Card Arranger နဲ့ဆို အလုပ်တွေ ပိုလွယ်သွားပြီ!',
                 'download_button': 'နောက်ဆုံး Version ကို ဒေါင်းလုဒ်ဆွဲပါ',
                 'features_title': '🌟 အဓိကလုပ်ဆောင်ချက်များ',
                 'feature1_title': 'အလိုအလျောက် ဖြတ်တောက်ခြင်း',
@@ -320,43 +318,46 @@
             document.querySelector(`.lang-btn[onclick="switchLanguage('${lang}')"]`).classList.add('active');
         }
 
-        // --- GITHUB RELEASE DOWNLOAD SCRIPT ---
-        const githubUser = "thinzaw"; 
-        const githubRepo = "yoeyar-card-website"; 
-        
-        fetch(`https://api.github.com/repos/${githubUser}/${githubRepo}/releases/latest`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.assets && data.assets.length > 0) {
-                    const downloadUrl = data.assets[0].browser_download_url;
-                    document.getElementById("downloadLink").href = downloadUrl;
-                } else {
-                     document.getElementById("downloadLink").innerText = "Download Not Available";
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching release:', error);
-                document.getElementById("downloadLink").innerText = "Download Not Available";
+        // --- SCRIPT EXECUTION AFTER PAGE LOADS ---
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // --- GITHUB RELEASE DOWNLOAD SCRIPT ---
+            const githubUser = "thinzaw"; 
+            const githubRepo = "yoeyar-card-website"; 
+            
+            fetch(`https://api.github.com/repos/${githubUser}/${githubRepo}/releases/latest`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.assets && data.assets.length > 0) {
+                        const downloadUrl = data.assets[0].browser_download_url;
+                        document.getElementById("downloadLink").href = downloadUrl;
+                    } else {
+                         document.getElementById("downloadLink").innerText = "Download Not Available";
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching release:', error);
+                    document.getElementById("downloadLink").innerText = "Download Not Available";
+                });
+
+            // --- SCROLL ANIMATION SCRIPT ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationDelay = entry.target.dataset.delay || '0s';
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach((elem, index) => {
+                elem.dataset.delay = `${index * 0.1}s`;
+                observer.observe(elem);
             });
 
-        // --- SCROLL ANIMATION SCRIPT ---
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationDelay = entry.target.dataset.delay || '0s';
-                    entry.target.classList.add('fade-in');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.fade-in').forEach((elem, index) => {
-            elem.dataset.delay = `${index * 0.1}s`; // Stagger the animation
-            observer.observe(elem);
+            // --- SET DEFAULT LANGUAGE ON LOAD ---
+            switchLanguage('my');
         });
-switchLanguage('my');
     </script>
 </body>
 </html>
-
-
