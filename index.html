@@ -265,99 +265,103 @@
     </div>
 
     <script>
-        // --- TRANSLATION SCRIPT ---
-        const translations = {
-            'en': {
-                'title': 'Yoeyar ID Card Arranger',
-                'subtitle': 'Still wasting time and energy printing ID cards? With Yoeyar ID Card Arranger, your work becomes as easy as snapping your fingers!',
-                'download_button': 'Download Latest Version',
-                'features_title': '🌟 Key Features',
-                'feature1_title': 'Automatic Cropping',
-                'feature1_desc': 'Simply add your photos, and the software automatically crops them to the correct card size, with special optimization for Myanmar NRC cards.',
-                'feature2_title': 'Precise Adjustments',
-                'feature2_desc': 'Easily fix tilted or skewed images with one-click Perspective Correction and Manual Crop tools.',
-                'feature3_title': 'Image Enhancement',
-                'feature3_desc': 'Improve your images before printing with powerful tools like Auto Tone, Auto Contrast, Sharpen, and Denoise.',
-                'feature4_title': 'Easy Management',
-                'feature4_desc': 'Rotate images, assign Front/Back labels, and re-order cards with a simple drag-and-drop interface.',
-                'feature5_title': 'Flexible Printing',
-                'feature5_desc': 'Generate a PDF or print directly. Customize your layout to fit multiple cards on a single A4 page, in portrait or landscape.',
-                'feature6_title': 'Modern & Fast',
-                'feature6_desc': 'A clean, modern interface that is fast and responsive, helping you get your work done in record time.',
-                'contact_title': 'Contact',
-                // --- THIS LINE IS CORRECTED ---
-                'contact_desc': 'For questions and support, please contact us on Facebook: Yoeyar or Zin Thu Hopong.'
-            },
-            'my': {
-                'title': 'Yoeyar ID Card Arranger',
-                'subtitle': 'ကတ်ပြားတွေ Print ထုတ်ဖို့ အချိန်ကုန်၊ လူပင်ပန်းနေတုန်းလား? Yoeyar ID Card Arranger နဲ့ဆို အလုပ်တွေ kinder bueno လို လွယ်သွားပြီ!',
-                'download_button': 'နောက်ဆုံး Version ကို ဒေါင်းလုဒ်ဆွဲပါ',
-                'features_title': '🌟 အဓိကလုပ်ဆောင်ချက်များ',
-                'feature1_title': 'အလိုအလျောက် ဖြတ်တောက်ခြင်း',
-                'feature1_desc': 'ဓာတ်ပုံတွေထည့်လိုက်ရုံနဲ့ ကတ်အရွယ်အစားအတိုင်း အလိုအလျောက်ဖြတ်ပေးပြီး၊ အထူးသဖြင့် ပန်းရောင် NRC ကတ်တွေအတွက် အထူးကောင်းမွန်အောင် ပြုလုပ်ထားပါတယ်။',
-                'feature2_title': 'တိကျသော ပြင်ဆင်မှုများ',
-                'feature2_desc': 'စောင်းနေသော သို့မဟုတ် ရွဲ့နေသောပုံများကို Perspective Correction နှင့် Manual Crop တို့ဖြင့် အလွယ်တကူ ပြန်လည်တည့်မတ်နိုင်ပါတယ်။',
-                'feature3_title': 'ပုံရိပ်အရည်အသွေးမြှင့်တင်ခြင်း',
-                'feature3_desc': 'Print မထုတ်ခင် Auto Tone, Auto Contrast, Sharpen, Denoise တို့ဖြင့် သင့်ပုံများကို ပိုမိုကြည်လင်တောက်ပအောင် ပြုလုပ်နိုင်ပါတယ်။',
-                'feature4_title': 'လွယ်ကူသော စီမံခန့်ခွဲမှု',
-                'feature4_desc': 'ပုံများကို လှည့်ခြင်း၊ ရှေ့/နောက် သတ်မှတ်ခြင်း နှင့် Drag-and-Drop ဖြင့် နေရာပြန်စီခြင်းတို့ကို လွယ်ကူစွာ လုပ်ဆောင်နိုင်ပါတယ်။',
-                'feature5_title': 'စိတ်ကြိုက် Print ထုတ်နိုင်ခြင်း',
-                'feature5_desc': 'PDF ဖိုင်အဖြစ် သိမ်းနိုင်သလို တိုက်ရိုက် Print လည်း ထုတ်နိုင်ပါတယ်။ A4 စာရွက်တစ်ရွက်တွင် ကတ်များစွာကို စိတ်ကြိုက် Layout ဖြင့် နေရာချနိုင်ပါတယ်။',
-                'feature6_title': 'ခေတ်မီမြန်ဆန်မှု',
-                'feature6_desc': 'သပ်ရပ်ပြီး ခေတ်မီတဲ့ ဒီဇိုင်းကြောင့် အသုံးပြုရလွယ်ကူကာ သင့်အလုပ်တွေကို အချိန်တိုအတွင်း ပြီးမြောက်စေပါတယ်။',
-                'contact_title': 'ဆက်သွယ်ရန်',
-                'contact_desc': 'မေးမြန်းလိုသည်များရှိပါက Facebook Page: ရိုးရာဆိုင် သို့မဟုတ် ဇင်သူ ဟိုပုံး သို့ ဆက်သွယ်နိုင်ပါသည်။'
+        // Wait for the entire HTML document to load before running any scripts
+        document.addEventListener('DOMContentLoaded', function() {
+    
+            // --- TRANSLATION SCRIPT ---
+            const translations = {
+                'en': {
+                    'title': 'Yoeyar ID Card Arranger',
+                    'subtitle': 'Still wasting time and energy printing ID cards? With Yoeyar ID Card Arranger, your work becomes as easy as snapping your fingers!',
+                    'download_button': 'Download Latest Version',
+                    'features_title': '🌟 Key Features',
+                    'feature1_title': 'Automatic Cropping',
+                    'feature1_desc': 'Simply add your photos, and the software automatically crops them to the correct card size, with special optimization for Myanmar NRC cards.',
+                    'feature2_title': 'Precise Adjustments',
+                    'feature2_desc': 'Easily fix tilted or skewed images with one-click Perspective Correction and Manual Crop tools.',
+                    'feature3_title': 'Image Enhancement',
+                    'feature3_desc': 'Improve your images before printing with powerful tools like Auto Tone, Auto Contrast, Sharpen, and Denoise.',
+                    'feature4_title': 'Easy Management',
+                    'feature4_desc': 'Rotate images, assign Front/Back labels, and re-order cards with a simple drag-and-drop interface.',
+                    'feature5_title': 'Flexible Printing',
+                    'feature5_desc': 'Generate a PDF or print directly. Customize your layout to fit multiple cards on a single A4 page, in portrait or landscape.',
+                    'feature6_title': 'Modern & Fast',
+                    'feature6_desc': 'A clean, modern interface that is fast and responsive, helping you get your work done in record time.',
+                    'contact_title': 'Contact',
+                    'contact_desc': 'For questions and support, please contact us on Facebook: Yoeyar or Zin Thu Hopong.'
+                },
+                'my': {
+                    'title': 'Yoeyar ID Card Arranger',
+                    'subtitle': 'ကတ်ပြားတွေ Print ထုတ်ဖို့ အချိန်ကုန်၊ လူပင်ပန်းနေတုန်းလား? Yoeyar ID Card Arranger နဲ့ဆို အလုပ်တွေ kinder bueno လို လွယ်သွားပြီ!',
+                    'download_button': 'နောက်ဆုံး Version ကို ဒေါင်းလုဒ်ဆွဲပါ',
+                    'features_title': '🌟 အဓိကလုပ်ဆောင်ချက်များ',
+                    'feature1_title': 'အလိုအလျောက် ဖြတ်တောက်ခြင်း',
+                    'feature1_desc': 'ဓာတ်ပုံတွေထည့်လိုက်ရုံနဲ့ ကတ်အရွယ်အစားအတိုင်း အလိုအလျောက်ဖြတ်ပေးပြီး၊ အထူးသဖြင့် ပန်းရောင် NRC ကတ်တွေအတွက် အထူးကောင်းမွန်အောင် ပြုလုပ်ထားပါတယ်။',
+                    'feature2_title': 'တိကျသော ပြင်ဆင်မှုများ',
+                    'feature2_desc': 'စောင်းနေသော သို့မဟုတ် ရွဲ့နေသောပုံများကို Perspective Correction နှင့် Manual Crop တို့ဖြင့် အလွယ်တကူ ပြန်လည်တည့်မတ်နိုင်ပါတယ်။',
+                    'feature3_title': 'ပုံရိပ်အရည်အသွေးမြှင့်တင်ခြင်း',
+                    'feature3_desc': 'Print မထုတ်ခင် Auto Tone, Auto Contrast, Sharpen, Denoise တို့ဖြင့် သင့်ပုံများကို ပိုမိုကြည်လင်တောက်ပအောင် ပြုလုပ်နိုင်ပါတယ်။',
+                    'feature4_title': 'လွယ်ကူသော စီမံခန့်ခွဲမှု',
+                    'feature4_desc': 'ပုံများကို လှည့်ခြင်း၊ ရှေ့/နောက် သတ်မှတ်ခြင်း နှင့် Drag-and-Drop ဖြင့် နေရာပြန်စီခြင်းတို့ကို လွယ်ကူစွာ လုပ်ဆောင်နိုင်ပါတယ်။',
+                    'feature5_title': 'စိတ်ကြိုက် Print ထုတ်နိုင်ခြင်း',
+                    'feature5_desc': 'PDF ဖိုင်အဖြစ် သိမ်းနိုင်သလို တိုက်ရိုက် Print လည်း ထုတ်နိုင်ပါတယ်။ A4 စာရွက်တစ်ရွက်တွင် ကတ်များစွာကို စိတ်ကြိုက် Layout ဖြင့် နေရာချနိုင်ပါတယ်။',
+                    'feature6_title': 'ခေတ်မီမြန်ဆန်မှု',
+                    'feature6_desc': 'သပ်ရပ်ပြီး ခေတ်မီတဲ့ ဒီဇိုင်းကြောင့် အသုံးပြုရလွယ်ကူကာ သင့်အလုပ်တွေကို အချိန်တိုအတွင်း ပြီးမြောက်စေပါတယ်။',
+                    'contact_title': 'ဆက်သွယ်ရန်',
+                    'contact_desc': 'မေးမြန်းလိုသည်များရှိပါက Facebook Page: ရိုးရာဆိုင် သို့မဟုတ် ဇင်သူ ဟိုပုံး သို့ ဆက်သွယ်နိုင်ပါသည်။'
+                }
+            };
+    
+            // Make the switchLanguage function accessible globally from the onclick attribute
+            window.switchLanguage = function(lang) {
+                document.querySelectorAll('[data-key]').forEach(elem => {
+                    const key = elem.getAttribute('data-key');
+                    if (translations[lang] && translations[lang][key]) {
+                        elem.innerHTML = translations[lang][key];
+                    }
+                });
+                document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelector(`.lang-btn[onclick="switchLanguage('${lang}')"]`).classList.add('active');
             }
-        };
-
-        function switchLanguage(lang) {
-            document.querySelectorAll('[data-key]').forEach(elem => {
-                const key = elem.getAttribute('data-key');
-                if (translations[lang] && translations[lang][key]) {
-                    elem.innerHTML = translations[lang][key];
-                }
+    
+            // --- GITHUB RELEASE DOWNLOAD SCRIPT ---
+            const githubUser = "thinzaw"; 
+            const githubRepo = "yoeyar-card-website"; 
+            
+            fetch(`https://api.github.com/repos/${githubUser}/${githubRepo}/releases/latest`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.assets && data.assets.length > 0) {
+                        const downloadUrl = data.assets[0].browser_download_url;
+                        document.getElementById("downloadLink").href = downloadUrl;
+                    } else {
+                         document.getElementById("downloadLink").innerText = "Download Not Available";
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching release:', error);
+                    document.getElementById("downloadLink").innerText = "Download Not Available";
+                });
+    
+            // --- SCROLL ANIMATION SCRIPT ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationDelay = entry.target.dataset.delay || '0s';
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+    
+            document.querySelectorAll('.fade-in').forEach((elem, index) => {
+                elem.dataset.delay = `${index * 0.1}s`; // Stagger the animation
+                observer.observe(elem);
             });
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelector(`.lang-btn[onclick="switchLanguage('${lang}')"]`).classList.add('active');
-        }
-
-        // --- GITHUB RELEASE DOWNLOAD SCRIPT ---
-        const githubUser = "thinzaw"; 
-        const githubRepo = "yoeyar-card-website"; 
-        
-        fetch(`https://api.github.com/repos/${githubUser}/${githubRepo}/releases/latest`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.assets && data.assets.length > 0) {
-                    const downloadUrl = data.assets[0].browser_download_url;
-                    document.getElementById("downloadLink").href = downloadUrl;
-                } else {
-                     document.getElementById("downloadLink").innerText = "Download Not Available";
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching release:', error);
-                document.getElementById("downloadLink").innerText = "Download Not Available";
-            });
-
-        // --- SCROLL ANIMATION SCRIPT ---
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationDelay = entry.target.dataset.delay || '0s';
-                    entry.target.classList.add('fade-in');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.fade-in').forEach((elem, index) => {
-            elem.dataset.delay = `${index * 0.1}s`; // Stagger the animation
-            observer.observe(elem);
+            
+            // Set the initial language to Myanmar when the page loads
+            switchLanguage('my');
         });
-        
-        // Set the initial language to Myanmar when the page loads
-        switchLanguage('my');
     </script>
 </body>
 </html>
